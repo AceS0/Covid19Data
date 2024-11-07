@@ -21,7 +21,7 @@ public class FileHandler {
            while (sc.hasNext()){
             String line = sc.nextLine();
             String[] attributes = line.split(";");
-            data = new Covid19Data(
+data = new Covid19Data(
                     ((attributes[0])),(attributes[1]),
                     (Integer.parseInt(attributes[2])),(Integer.parseInt(attributes[3])),
                     (Integer.parseInt(attributes[4])),(Integer.parseInt(attributes[5])),

@@ -1,4 +1,4 @@
-    public class Covid19Data {
+public class Covid19Data implements Comparable<Covid19Data>{
     private String region;
     private String aldersgruppe;
     private int confirmed;
@@ -16,6 +16,16 @@
         this.dato = dato;
 
     }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getAldersgruppe() {
+        return aldersgruppe;
+    }
+
+
     @Override
         public String toString(){
 return "Region=" + region +
@@ -26,5 +36,15 @@ return "Region=" + region +
         "; indlagte=" + indlagte +
         "; dato=" + dato +
         "";
+    }
+
+    @Override
+    public int compareTo(Covid19Data other) {
+        if (Integer.parseInt(this.region) > Integer.parseInt(other.getRegion())) {
+            return 1;
+        } else if (Integer.parseInt(this.region) < Integer.parseInt(other.getRegion())){
+            return -1;
+        }
+        return 0;
     }
 }
